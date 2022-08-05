@@ -8,7 +8,6 @@
 * {
   box-sizing: border-box;
   outline: 0;
- /*border: 1px solid black;*/
 }
 
 p {
@@ -87,7 +86,7 @@ form label {
   line-height: 2em;
   width: auto;
   padding: 0 1em 0 0;
-  font-size: 1.2em;;
+  font-size: 1.2em;
 }
 
 form input {
@@ -125,10 +124,10 @@ form button:hover {
   padding: 0.3em;
 }
 
-.invalid-result {
+.invalid-input {
   background: rgb(255, 150, 150);
 }
 
-.valid-result {
+.valid-input {
   background: rgb(150,255, 150);
 }

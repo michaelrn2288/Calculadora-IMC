@@ -3,8 +3,14 @@ function calculateIMC() {
     
     const weightInput = Number(document.querySelector('#weightInput').value);
     const heightInput = Number(document.querySelector('#heightInput').value);
-    let result = document.querySelector('#result');
-    const IMC = weightInput / (heightInput**2);
+    const result = document.querySelector('#result');
+    const IMC = weightInput / heightInput**2;
+
+    if (!weightInput || !heightInput) {
+        invalidInput()
+    } else {
+        validInput()
+    };
 
     function IMCType() {
         if (IMC < 18.5) {
@@ -17,30 +23,20 @@ function calculateIMC() {
             return 'com obesidade grau 1'
         } else if (IMC < 40) {
             return 'com obesidade grau 2'
-        } else { //acima de 40kg
+        } else { //acima de 40
             return 'com obesidade grau 3'
         }
     };
 
     function invalidInput() {
-        result.classList.add('invalid-result');
-        result.classList.remove('valid-result')
-    }
+        result.innerHTML = !weightInput ? 'peso inválido' : !heightInput ? 'altura inválida' : '';
+        result.classList.add('invalid-input');
+        result.classList.remove('valid-input')
+    };
 
-    function validResult() {
-        result.classList.add('valid-result');
-        result.classList.remove('invalid-result')
-    }
-
-    if (!weightInput) {
-        result.innerHTML = 'peso inválido';
-        invalidInput()
-    } else if (!heightInput) {
-        result.innerHTML = 'altura inválida';
-        invalidInput()
-    } else {
-        result.innerHTML = `Seu IMC é: ${IMC.toFixed(2)}
-        <p>você está ${IMCType()}</p>`;
-        validResult()
-    }
+    function validInput() {
+        result.innerHTML = `Seu IMC é: ${IMC.toFixed(2)}<p>você está ${IMCType()}</p>`;
+        result.classList.add('valid-input');
+        result.classList.remove('invalid-input')
+    };
 }
