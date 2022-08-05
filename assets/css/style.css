@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+:root {
+  --primary-color: rgb(17, 86, 102);
+  --primary-color-darker: rgb(9, 48, 56);
+}
+
+* {
+  box-sizing: border-box;
+  outline: 0;
+ /*border: 1px solid black;*/
+}
+
+p {
+  margin: 0.3em auto;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--primary-color);
+  font-family: 'Open sans', sans-serif;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+.container {
+  max-width: 440px;
+  margin: 1em auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#tabelaIMC {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+}
+
+h1 {
+  grid-row: 1 / 2;
+  grid-column: 1 / span 2;
+  font-size: 2em;
+  margin-top: 0;
+  margin-bottom: 0.5em
+}
+
+.column1 {
+  grid-column-start: 1;
+  grid-row-start: 2;
+}
+
+.column2 {
+  grid-column-start: 2;
+  grid-row-start: 2;
+}
+
+#IMCCalculator {
+  margin-top: 1.4em
+}
+
+form {
+  margin-top: 2em;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.input-unity {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items:flex-end;
+}
+
+form input, form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+form label {
+  line-height: 2em;
+  width: auto;
+  padding: 0 1em;
+  font-size: 1.2em;;
+}
+
+form input {
+  font-size: 24px;
+  height: 1.5em;
+  width: 40%;
+  padding: 0;
+}
+
+form input:focus {
+  outline: 1px solid var(--primary-color);
+}
+
+form button {
+  border: none;
+  background: var(--primary-color);
+  color: #fff;
+  font-size: 1.3em;
+  font-weight: 700;
+  height: 50px;
+  cursor: pointer;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  width: 100%;
+}
+
+form button:hover {
+  background: var(--primary-color-darker);
+}
+
+#result {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.3em;
+  padding: 0.3em;
+}
+
+.invalid-result {
+  background: rgb(255, 150, 150);
+}
+
+.valid-result {
+  background: rgb(150,255, 150);
+}
