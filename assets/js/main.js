@@ -9,7 +9,7 @@ function calculateIMC() {
     if (!weightInput || !heightInput) {
         invalidInput()
     } else {
-        validInput()
+        IMCResult()
     };
 
     function IMCType() {
@@ -34,7 +34,7 @@ function calculateIMC() {
         result.classList.remove('valid-input')
     };
 
-    function validInput() {
+    function IMCResult() {
         result.innerHTML = `Seu IMC é: ${IMC.toFixed(2)}<p>você está ${IMCType()}</p>`;
         result.classList.add('valid-input');
         result.classList.remove('invalid-input')
