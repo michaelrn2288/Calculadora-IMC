@@ -6,7 +6,7 @@ function calculateIMC() {
     let result = document.querySelector('#result');
     const IMC = weightInput / (heightInput**2);
 
-    function tipoIMC() {
+    function IMCType() {
         if (IMC < 18.5) {
             return 'abaixo do peso';
         } else if (IMC < 25) {
@@ -22,7 +22,7 @@ function calculateIMC() {
         }
     };
 
-    function invalidResult() {
+    function invalidInput() {
         result.classList.add('invalid-result');
         result.classList.remove('valid-result')
     }
@@ -34,13 +34,13 @@ function calculateIMC() {
 
     if (!weightInput) {
         result.innerHTML = 'peso inválido';
-        invalidResult()
+        invalidInput()
     } else if (!heightInput) {
         result.innerHTML = 'altura inválida';
-        invalidResult()
+        invalidInput()
     } else {
         result.innerHTML = `Seu IMC é: ${IMC.toFixed(2)}
-        <p>você está ${tipoIMC()}</p>`;
+        <p>você está ${IMCType()}</p>`;
         validResult()
     }
 }
